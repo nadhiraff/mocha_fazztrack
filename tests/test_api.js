@@ -44,6 +44,7 @@ describe(testcases.description, async() => {
         // assertion
         expect(response.statusCode).to.equal(400);
         expect(response.body).to.be.jsonSchema(data); 
+        expect(response.body.errorCode).to.equal('ER-03');
     });
 
     it(testcases.negative.case2, async() => {
@@ -56,6 +57,7 @@ describe(testcases.description, async() => {
         // assertion
         expect(response.status).to.equal(400);
         expect(response.body).to.be.jsonSchema(data); 
+        expect(response.body.errorCode).to.equal('ER-03');
     });
 
 
@@ -68,5 +70,6 @@ describe(testcases.description, async() => {
         // assertion
         expect(response.status).to.equal(404);
         expect(response.body).to.be.jsonSchema(data); 
+        expect(response.body.errorCode).to.equal('ER-01');
     });
 });
